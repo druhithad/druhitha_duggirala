@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Druhitha Duggirala · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF8FF;--surface:#FFFFFF;--ink:#3B3552;--muted:#6E6785;
+  --lilac:#E3D9F7;--mint:#D3EFE2;--peach:#FFDFD0;--butter:#FFF1BF;--sky:#D5E7FA;--rose:#FAD4E4;
+  --accent:#7B5FC7;--line:#E9E2F5;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1D1A2B;--surface:#272338;--ink:#F1ECFB;--muted:#B5AECB;
+  --lilac:#4A3F73;--mint:#2F5A4B;--peach:#6A4636;--butter:#675A2A;--sky:#2F4A6B;--rose:#6B3A52;
+  --accent:#C4B0FF;--line:#38314F;}}
+:root[data-theme="dark"]{
+  --bg:#1D1A2B;--surface:#272338;--ink:#F1ECFB;--muted:#B5AECB;
+  --lilac:#4A3F73;--mint:#2F5A4B;--peach:#6A4636;--butter:#675A2A;--sky:#2F4A6B;--rose:#6B3A52;
+  --accent:#C4B0FF;--line:#38314F;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 'Nunito',system-ui,sans-serif}
+h1,h2,h3{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;justify-content:center;padding:1.2rem 0;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--accent)}
+/* hero */
+.hero{text-align:center;padding:3rem 0 2rem}
+.wave{display:flex;align-items:center;justify-content:center;gap:5px;height:110px;margin-bottom:1.5rem}
+.wave i{width:9px;border-radius:9px;height:var(--h);animation:pulse 1.6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes pulse{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem)}
+.hero p{max-width:34rem;margin:1rem auto 1.6rem;color:var(--muted);font-size:1.15rem}
+.btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.7rem 1.4rem;border-radius:999px;font-weight:800;text-decoration:none;background:var(--lilac)}
+.btn.alt{background:var(--peach)}
+.btn:hover{transform:translateY(-2px)}
+/* sections */
+section{padding:3rem 0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.5rem}
+.stat{border-radius:28px 28px 28px 8px;padding:1.1rem 1.2rem;font-weight:600}
+.stat b{display:block;font:400 1.7rem 'Young Serif',serif}
+.s1{background:var(--mint)}.s2{background:var(--butter)}.s3{background:var(--sky)}.s4{background:var(--rose)}
+/* timeline */
+.tl{border-left:3px dashed var(--line);margin-left:.6rem;padding-left:1.6rem;display:grid;gap:1.6rem}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:calc(-1.6rem - 9px);top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--dot)}
+.job h3{font-size:1.25rem}
+.job .meta{color:var(--muted);font-weight:600;font-size:.95rem}
+.job ul{margin:.6rem 0 0;padding-left:1.1rem}.job li{margin-bottom:.3rem}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem}
+.card{padding:1.5rem;display:flex;flex-direction:column;gap:.8rem}
+.card:nth-child(1){background:var(--lilac);border-radius:36px 12px 36px 12px}
+.card:nth-child(2){background:var(--peach);border-radius:12px 36px 12px 36px}
+.card:nth-child(3){background:var(--mint);border-radius:36px 12px 36px 12px}
+.card h3{font-size:1.3rem}.card p{margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tags span{background:var(--surface);border-radius:999px;padding:.15rem .7rem;font-size:.85rem;font-weight:600}
+.card a{font-weight:800}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.sk{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:1.1rem 1.2rem}
+.sk h3{font-size:1.05rem;margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips span{padding:.15rem .7rem;border-radius:999px;font-size:.9rem;font-weight:600;background:var(--c)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.two ul{margin:0;padding-left:1.1rem}.two li{margin-bottom:.4rem}
+/* contact */
+.contact{background:var(--lilac);border-radius:40px;padding:2.5rem 1.5rem;text-align:center}
+.contact p{margin:.6rem 0 1.4rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:2rem 0 3rem;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.wave i{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+  <div class="wave" id="wave" aria-hidden="true"></div>
+  <h1>Hi, I’m Druhitha</h1>
+  <p>B.Tech IT student building things that help people hear, see, and feel the world around them: from IoT wearables to ML-powered apps.</p>
+  <div class="btns"><a class="btn" href="#projects">See my projects</a><a class="btn alt" href="mailto:druhithad@gmail.com">Say hello</a></div>
+</header>
+
+<section id="about">
+  <h2>About me</h2>
+  <p style="max-width:42rem">I’m a third-year Information Technology student at V.R. Siddhartha Engineering College with a solid base in data structures, algorithms and object-oriented programming. I work mostly in Java and Python, and I like projects where machine learning meets real-world accessibility. I’m looking for an internship or entry-level role where I can ship real work and keep learning.</p>
+  <div class="stats">
+    <div class="stat s1"><b>8.96</b>CGPA</div>
+    <div class="stat s2"><b>3</b>Internships</div>
+    <div class="stat s3"><b>IEEE</b>Published paper</div>
+    <div class="stat s4"><b>5</b>Certifications</div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="job" style="--dot:var(--peach)">
+      <h3>Cloud Computing Intern, AWS Academy</h3>
+      <div class="meta">Jan 2026 – Mar 2026 · Remote</div>
+      <ul>
+        <li>Provisioned and managed EC2 instances, S3 buckets and IAM policies to deploy 3+ cloud-hosted applications.</li>
+        <li>Designed secure, scalable environments using least-privilege IAM and multi-tier storage.</li>
+        <li>Documented patterns for auto-scaling, fault tolerance and cost optimization.</li>
+      </ul>
+    </div>
+    <div class="job" style="--dot:var(--lilac)">
+      <h3>Java Backend Intern, Infosys Springboard</h3>
+      <div class="meta">Oct 2025 – Feb 2026 · Remote</div>
+      <ul>
+        <li>Built a Banking Simulation Application in Spring Boot with 8+ REST API endpoints for accounts and transactions.</li>
+        <li>Integrated MySQL and centralized exception handling, cutting error-handling boilerplate by 40%.</li>
+        <li>Validated APIs with Postman and followed Agile sprints over 4 months.</li>
+      </ul>
+    </div>
+    <div class="job" style="--dot:var(--mint)">
+      <h3>AI &amp; ML Intern, YBI Foundation</h3>
+      <div class="meta">Mar 2025 – May 2025 · Remote</div>
+      <ul>
+        <li>Trained a Diabetes Prediction classifier with 78%+ accuracy on the PIMA dataset using scikit-learn.</li>
+        <li>Ran the full pipeline: cleaning, feature engineering, model selection (Logistic Regression, Random Forest) and ROC-AUC evaluation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Smart Sound-to-Visual Assistance</h3>
+      <p>An AI system that recognizes speech and environmental sounds and turns them into real-time visual alerts for deaf and hard-of-hearing users, with a Flutter mobile app.</p>
+      <div class="tags"><span>Python</span><span>ML</span><span>Flutter</span><span>Audio</span></div>
+      <a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+    </article>
+    <article class="card">
+      <h3>Sound-Aware Haptic Wearable</h3>
+      <p>An ESP32 wearable with a MEMS microphone and vibration motor that gives haptic feedback for 5+ sound types. The quantized model reaches 85%+ accuracy on-device. Published at IEEE AIEI.</p>
+      <div class="tags"><span>ESP32</span><span>TensorFlow Lite</span><span>IoT</span></div>
+      <a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+    </article>
+    <article class="card">
+      <h3>Monkey Repellent Detection</h3>
+      <p>A real-time YOLOv8 pipeline that spots monkeys in farm fields with 90%+ precision and triggers an automatic repellent alert, so nobody has to keep watch.</p>
+      <div class="tags"><span>YOLOv8</span><span>OpenCV</span><span>Python</span></div>
+      <a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="sk"><h3>Languages</h3><div class="chips" style="--c:var(--lilac)"><span style="background:var(--lilac)">Python</span><span style="background:var(--lilac)">Java</span><span style="background:var(--lilac)">C</span></div></div>
+    <div class="sk"><h3>ML and AI</h3><div class="chips"><span style="background:var(--mint)">TensorFlow Lite</span><span style="background:var(--mint)">YOLOv8</span><span style="background:var(--mint)">OpenCV</span><span style="background:var(--mint)">Pandas</span><span style="background:var(--mint)">NumPy</span></div></div>
+    <div class="sk"><h3>Backend</h3><div class="chips"><span style="background:var(--peach)">Spring Boot</span><span style="background:var(--peach)">REST APIs</span><span style="background:var(--peach)">MySQL</span></div></div>
+    <div class="sk"><h3>Tools and concepts</h3><div class="chips"><span style="background:var(--sky)">Git</span><span style="background:var(--sky)">GitHub</span><span style="background:var(--sky)">Postman</span><span style="background:var(--sky)">OOPS</span><span style="background:var(--sky)">DSA</span><span style="background:var(--sky)">AWS</span><span style="background:var(--sky)">OS</span><span style="background:var(--sky)">DBMS</span></div></div>
+  </div>
+</section>
+
+<section id="more">
+  <div class="two">
+    <div>
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Certified Cloud Practitioner (2026)</li>
+        <li>Oracle Cloud Infrastructure Certified (2025)</li>
+        <li>Cisco CCNA: Routing &amp; Switching (2025)</li>
+        <li>Intellipaat Data Science (2025)</li>
+        <li>Cisco Python Essentials (2024)</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Highlights</h2>
+      <ul>
+        <li>Flipkart GRiD 8.0 semi-finalist (2026)</li>
+        <li>Published “Sound Aware Haptic Feedback Wearable for the Hearing Impaired” at the IEEE AIEI Conference, NIT Jamshedpur (2026)</li>
+        <li>Event organizer for CSI Student Chapter, coordinating an event for 100+ students at VRSEC (2025)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2 style="margin-bottom:0">Let’s work together</h2>
+    <p>Open to internships and entry-level roles.</p>
+    <div class="btns">
+      <a class="btn alt" href="mailto:druhithad@gmail.com">druhithad@gmail.com</a>
+      <a class="btn" style="background:var(--surface)" href="tel:+916303811707">+91 63038 11707</a>
+      <a class="btn" style="background:var(--surface)" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" style="background:var(--surface)" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Druhitha Duggirala</footer>
+</div>
+<script>
+(function(){
+  var w=document.getElementById('wave'),cols=['--lilac','--peach','--mint','--butter','--sky','--rose'],n=31,html='';
+  for(var i=0;i<n;i++){
+    var h=20+Math.round(80*Math.abs(Math.sin(i*0.55)*Math.cos(i*0.23)))+8;
+    html+='<i style="--h:'+h+'px;--d:'+(-(i*0.11)).toFixed(2)+'s;background:var('+cols[i%cols.length]+')"></i>';
+  }
+  w.innerHTML=html;
+})();
+</script>
+</body>
+</html>
